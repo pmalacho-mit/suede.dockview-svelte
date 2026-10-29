@@ -1,4 +1,7 @@
 {
+  "name": "dockview-svelte-suede",
+  "private": true,
+  "type": "module",
   "dependencies": {
     "dockview": "^8.1.0",
     "svelte": "^5.43.5",
