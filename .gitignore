@@ -24,3 +24,7 @@ dist-ssr
 
 # Generated test report
 fashion-show.md
+
+*.vest.temp.svelte
+fashion-show.assets
+dist
