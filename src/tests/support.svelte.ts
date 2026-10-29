@@ -47,3 +47,13 @@ export const mounted = {
   rects: (container: HTMLElement, target: string) =>
     mounted.parts(container, target).map((part) => part.getBoundingClientRect()),
 };
+
+/** jsdom does no layout: geometry only means something in a real browser. */
+export const layout = !navigator.userAgent.includes("jsdom");
+
+export const frames = (count = 2) =>
+  new Promise<void>((resolve) => {
+    const step = (left: number) =>
+      left <= 0 ? resolve() : requestAnimationFrame(() => step(left - 1));
+    step(count);
+  });
