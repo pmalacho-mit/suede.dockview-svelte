@@ -4,7 +4,7 @@
 ; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
 ;
 [subrepo]
-	remote = https://github.com/pmalacho-mit/suede.sweater-vest.git
+	remote = git@github.com:pmalacho-mit/suede.sweater-vest.git
 	branch = release
 	commit = e78c2719ca643e69fe8db1d9274939685866195d
 	parent = 15973194ea6720973e6a35b33b1d01efdb29c30c
