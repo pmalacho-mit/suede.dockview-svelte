@@ -57,3 +57,46 @@ export const frames = (count = 2) =>
       left <= 0 ? resolve() : requestAnimationFrame(() => step(left - 1));
     step(count);
   });
+
+/** A right-click on the dock tab titled `title`, at the pointer or below the tab. */
+export const rightClickTab = (
+  container: HTMLElement,
+  title: string,
+  at?: { x: number; y: number },
+) => {
+  const tab = rendered
+    .all(container, "dockview-dv-default-tab")
+    .find((it) => it.textContent?.trim().startsWith(title));
+
+  if (!tab) throw new Error(`No tab titled "${title}"`);
+
+  const { left, bottom } = tab.getBoundingClientRect();
+  tab.dispatchEvent(
+    new MouseEvent("contextmenu", {
+      bubbles: true,
+      cancelable: true,
+      clientX: at?.x ?? left,
+      clientY: at?.y ?? bottom,
+    }),
+  );
+};
+
+export const menuBox = (container: HTMLElement) => {
+  const menu = container.querySelector(
+    '[data-dockview-svelte="dockcontextmenu"]',
+  );
+  if (!menu) throw new Error("The context menu is not open");
+  return menu.getBoundingClientRect();
+};
+
+export const menuItems = (container: HTMLElement) =>
+  rendered.texts(container, "menu-item");
+
+export const clickMenuItem = (container: HTMLElement, label: string) => {
+  const item = rendered
+    .all(container, "menu-item")
+    .find((it) => it.textContent?.trim() === label);
+
+  if (!item) throw new Error(`No menu item labelled "${label}"`);
+  item.click();
+};
