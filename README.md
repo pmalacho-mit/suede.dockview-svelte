@@ -1,13 +1,13 @@
-# Dockview-svelte-suede
+# suede.dockview-svelte
 
 This repo is a [suede dependency](https://github.com/pmalacho-mit/suede).
 
-To see the installable source code, please checkout the [release branch](https://github.com/pmalacho-mit/dockview-svelte-suede/tree/release).
+To see the installable source code, please checkout the [release branch](https://github.com/pmalacho-mit/suede.dockview-svelte/tree/release).
 
 ## Installation
 
 ```bash
-bash <(curl https://suede.sh/install/release) --repo pmalacho-mit/dockview-svelte-suede
+bash <(curl https://suede.sh/install/release) --repo pmalacho-mit/suede.dockview-svelte
 ```
 
 <details>
@@ -16,7 +16,7 @@ See alternative to using <a href="https://github.com/pmalacho-mit/suede#suedesh"
 </summary>
 
 ```bash
-bash <(curl https://raw.githubusercontent.com/pmalacho-mit/suede/refs/heads/main/scripts/install/release.sh) --repo pmalacho-mit/dockview-svelte-suede
+bash <(curl https://raw.githubusercontent.com/pmalacho-mit/suede/refs/heads/main/scripts/install/release.sh) --repo pmalacho-mit/suede.dockview-svelte
 ```
 
 </details>
